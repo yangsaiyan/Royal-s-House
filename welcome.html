@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+    <title>Royal's House - Welcome</title>
+    <link rel="shortcut icon" href="logoicon.png" type="image/x-icon">
+    <style>
+        /* Default styles for larger screens */
+        body {
+            background-image: url(house.png), linear-gradient(to bottom right, rgba(160, 234, 207, 1), rgba(1, 72, 114, 1));
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            position: relative;
+            left: 250px;
+            top: 250px;
+            width: 500px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        button {
+            border: 1px solid black;
+            background-color: transparent;
+            height: 40px;
+            font-size: 20px;
+            position: relative;
+            left: 10px;
+        }
+        
+        #logo{
+            position: relative;
+            top: 45px;
+        }
+
+        button:hover {
+            background-color: rgba(160, 234, 207, 1);
+        }
+
+        /* Styles for smaller screens */
+        @media (max-width: 375px) {
+            .container {
+                position: static;
+                width: auto;
+                margin-top: 50px;
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="background-image">
+        <div class="container">
+            <div class="content">
+                <img src="logo.png" width="400" height="200" alt="logo" id = "logo">
+                <h1>Welcome to Royal's House</h1>
+                <a href="login.html"><button>Find a comfortable home from us &nbsp;<img src="link.png" width="16px" height="16px"></button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var container = document.querySelector('.container');
+            container.style.opacity = 1;
+        };
+    </script>
+
+</body>
+
+</html>

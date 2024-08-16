@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>Royal's House - Register</title>
+        <link rel="shortcut icon" href="logoicon.png" type="image/x-icon">
+        <style>
+            body{
+                background-image: linear-gradient(to bottom right, rgba(160,234,207,1), rgba(1,72,114,1));
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+            img{
+                width: 20px;
+                height: 20px;
+                position: relative;
+                left: 60px;
+                top: 20px;
+            }
+
+            .container{
+                border: 1px transparent solid;
+                background: rgba(211,211,211,0.55);
+                border-radius: 10%;
+                width: 550px;
+                height: 710px;
+                padding: 30px;
+                margin: auto;
+                position: relative;
+                top: 80px;
+                z-index: 0;
+            }
+
+            .register_content input{
+                width: 350px;
+                height: 35px;
+                border: 0px;
+                z-index: 1;
+                outline: none;
+                background-color: transparent;
+                border-bottom: 1px black solid;
+                font-size: 20px;
+                position: relative;
+                left: 96px;
+                top: 20px;
+            }
+
+            #submit{
+                position: relative;
+                left: 97px;
+                border-radius: 30px;
+                background-color: rgb(160,234,207,1);
+                font-size: 20px;
+            }
+
+            #submit:hover{
+                background-color: gray;
+            }
+
+            #name{
+                margin-bottom: 50px;
+            }
+
+            #email{
+                margin-bottom: 50px;
+            }
+
+            #telephone{
+                margin-bottom: 50px;
+            }
+
+            #username{
+                margin-bottom: 50px;
+            }
+
+            #password{
+                margin-bottom: 50px;
+            }
+
+            #cpassword{
+                margin-bottom: 50px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "register_content">
+                <form onsubmit="registrationcompleted(event)" action="login.html">
+                    <p><input type="text" id="name" placeholder="Full name" required autocomplete="off" pattern="[a-zA-Z]+(\s+[a-zA-Z]+)*" oninvalid="this.setCustomValidity('Please enter at least one alphabet and do not start with space')" oninput="this.setCustomValidity('')"><img src="name.png"></p>
+                    <p><input type="email" id="email" placeholder="E-mail" required autocomplete="off"><img src="email.png"></p>
+                    <p><input type="tel" id="telephone" placeholder="Telephone number" required autocomplete="off" pattern="[0][1][0-9]{8,}" oninvalid="this.setCustomValidity('Please match 01XXXXXXXX')" oninput="this.setCustomValidity('')"><img src="phone.png"></p>
+                    <p><input type="text" id="username" placeholder="Username" required autocomplete="off" pattern = "^[^\s].*" oninvalid="this.setCustomValidity('Please do not start with space')" oninput="this.setCustomValidity('')"><img src="user.png"></p>
+                    <p><input type="password" id="password" placeholder="Password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninvalid="this.setCustomValidity('Password must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter')" oninput="this.setCustomValidity('')"><img src="pass.png"></p>
+                    <p><input type="password" id="cpassword" placeholder="Confirm password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><img src="pass.png"></p>
+
+                    <input type="submit" value="Create account" id ="submit"><br>
+                </form>
+            </div>
+        </div>
+        <script>
+
+            var pass, cpass;
+
+            pass = document.getElementById("password");
+            cpass = document.getElementById("cpassword");
+
+            function confirmPassword(){
+                if(pass.value != cpass.value){
+                    cpass.setCustomValidity('Password does not match!');
+                }
+                else cpass.setCustomValidity('');
+            }
+
+            pass.onchange = confirmPassword;
+            cpass.onkeyup = confirmPassword;
+
+            function registrationcompleted(e){
+                
+                
+
+                var fName = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var tel = document.getElementById("telephone").value;
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                const name = localStorage.setItem("fullName", fName);
+                localStorage.setItem("email", email);
+                localStorage.setItem("telephone", tel);
+                localStorage.setItem("userName", username);
+                localStorage.setItem("password", password);
+
+                alert("Your account has been created.");
+            }
+
+        </script>
+    </body>
+</html>

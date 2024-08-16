@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Royal's House - Find Hostel</title>
+    <link rel="shortcut icon" href="logoicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .searchinput{
+            width: 70%;
+            height: 33px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        #input{
+            width: 400px;
+            height: 16px;
+            float: left;
+            border: none;
+            padding: 5px;
+            font: optional;
+            outline: none;
+        }
+
+        form button{
+            width: fit-content;
+            height: 26px;
+            float: left;
+            border: none;
+            padding: auto;
+            outline: none;
+        }
+
+        .hcards{
+          display: block;
+          background-color: aliceblue;  
+          border-radius: 5px;
+          box-shadow: 18px 18px 18px -5px rgba(0, 0, 0, 0.1),
+          inset 5px 5px 2px rgba(240, 240, 240, 0.7),
+          inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+          margin-left: 50px;
+          width: 70%;
+          padding: 8px;
+        }
+
+        .isHidden{
+            display: none;
+        }
+
+        #tTitle{
+            padding-top: 3px;
+            font-size: larger;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            background-image: linear-gradient(to right, #ccc, #333, #ccc);
+        }
+
+        .fa-facebook, .fa-twitter{
+            color: black;
+        }
+
+        .smbtn{
+            height: 50px;
+            width: 50px;
+            float: right;
+            display: inline;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            padding-left: 0.5px;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 7px 7px #333;
+            transition: all 0.2s ease-out;
+            position: relative;
+        }
+
+        .smbtn:hover{
+            width: 100px;
+        }
+
+        .icon{
+            display: inline;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            border-radius: 50px;
+            box-sizing: border-box;
+            line-height: 50px;
+            transition: all 0.2s ease-out;
+        }
+
+        .smbtn:nth-child(1):hover a {
+            color: #3B5998;
+        }
+
+        .smbtn:nth-child(2):hover a {
+            color: #55ACEE;
+        }
+
+        .icon a{
+            font-size: 20px;
+            line-height: 50px;
+            transition: all 0.2s ease-out;
+            text-align: center;
+        }
+
+        .icon span{
+            font-size: 17px;
+        }
+
+        .smbtn:nth-child(1) span{
+            color: #3B5998;
+        }
+
+        .smbtn:nth-child(2) span{
+            color: #55ACEE;
+        }
+
+        #fbbtn{
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: none;
+            float: right;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        #twbtn{
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: none;
+            float: right;
+            cursor: pointer;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id = "navigation">
+        <table>
+            <tr>
+                <td><img id = "logo" src="logo.png" alt="logo"></td>
+                <td class = "navigation_home" id = "home"><a href="index.html">Home</a></td>
+                <td class = "navigation_home" id = "find_hostel"><a href="find_hostel.html">Find Hostel</a></td>
+                <td class = "navigation_home" id = "about_us"><a href="about_us.html">About Us</a></td>
+                <td class = "navigation_home" id="contact_us"><a href="contact_us.html"> Contact Us</a></td>
+                <td class="navigation_home" id="join_us"><a href="join_us.html"> Join Us</a></td>
+                <td class = "navigation_home" id = "drop_down">                
+                    <div id="dropdown">
+                    <button id="dropbtn"><img src = "profile.png" width = "50px" height = "50px"><p id = "login_logo"></p></button>
+                    <div id="dropdown-content">
+                        <a href="welcome.html" style="font-size: 24px;">Sign Out</a>
+                    </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="searchinput">
+        <form id="inputform">
+            <input type="text" id="input" placeholder="Where are you looking for?">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <br>
+    <div class="socialmedia">
+        <button id="fbbtn" onclick="fbShare()">
+            <div class="smbtn" >
+                <div class="icon">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <span>Facebook</span>
+                </div>
+            </div>
+        </button>
+        <button id="twbtn" onclick="twShare()">
+            <div class="smbtn">
+                <div class="icon">
+                    <a href="#" class="fa fa-twitter"></a>
+                    <span>Twitter</span>
+                </div>
+            </div>
+        </button>
+    </div>
+
+    <div id="searchDisplay">
+            <div id="nothingfound"></div>
+
+            <div class="hcards">
+                    <div id="tTitle">Meadow Park Student Accomodation!!!</div>
+                    <hr>
+                    <div id="houseInfo">Meadow Park</div>
+                    <div id="pr">RM400</div>
+                    <div id="rs">90 square feet</div>
+                    <div id="pDate">1-4-23</div>  
+            </div>
+            <br>
+            <div class="hcards">
+                <div id="tTitle">Kampar Cambridge Room for Rent</div>
+                <hr>
+                <div id="houseInfo">Cambridge-2297(G2)</div>
+                <div id="pr">RM200</div>
+                <div id="rs">80 square feet</div>
+                <div id="pDate">1-4-23</div>
+            </div>
+            <br>
+            <div class="hcards">
+                <div id="tTitle">Kampar Cambridge Room for Rent</div>
+                <hr>
+                <div id="houseInfo">Cambridge-2297(A4)</div>
+                <div id="pr">RM270</div>
+                <div id="rs">113 square feet</div>
+                <div id="pDate">1-4-23</div>
+            </div>
+            <br>
+            <div class="hcards">
+                <div id="tTitle">Champs Elysees Studio Unit for Rent</div>
+                <hr>
+                <div id="houseInfo">Champs</div>
+                <div id="pr">RM300</div>
+                <div id="rs">90 square feet</div>
+                <div id="pDate">15-4-23</div>
+            </div>
+    </div>
+
+    
+
+    <script>
+        $("#inputform").submit(function(event){
+            event.preventDefault();
+            var searchItem = document.getElementById("input").value;
+            hcards=document.querySelectorAll(".hcards");
+            
+            for(var i=0;i<hcards.length;i++){
+                if(hcards[i].innerText.toLowerCase().includes(searchItem.toLowerCase())||
+                hcards[i].innerText.toLowerCase().split(" ").includes(searchItem.toLowerCase())){
+                    hcards[i].classList.remove("isHidden");
+                    document.getElementById('nothingfound').style.display="none";
+                }
+                else{
+                    hcards[i].classList.add("isHidden");
+                    document.getElementById('nothingfound').innerHTML="Sorry, nothing found.";
+                }
+            }
+
+            setCookie(searchItem, 30);
+
+            if(typeof(Storage)!="undefined"){
+            localStorage.setItem("Search",searchItem);
+            localStorage.getItem("Search");
+            }
+
+            sessionStorage.setItem('search',searchItem);
+
+            var searches = $('input').value;
+
+            $.ajax({
+                type: 'GET',
+                url:'/api/searches',
+                dataType:'json',
+                timeout:1000,
+                success: function(searches){
+                    console.log(searches);
+                },
+                error: function(){
+                    alert('API error loading..');
+                }
+            });
+        });
+
+        function setCookie(value, expiredDay){
+            const d = new Date();
+            d.setTime(d.getTime())+(expiredDay*24*60*60*1000);
+            let expired="expires="+d.toUTCString();
+            document.cookie="search="+value+"; "+expired+"; path=/";
+        }
+
+        let shareUrl=encodeURI(document.location.href);
+
+        function fbShare(){
+            const fbShareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + shareUrl;
+            window.open(fbShareUrl , '_blank');
+        }
+
+        function twShare(){
+            const twShareUrl = 'https://twitter.com/intent/tweet?text=' + shareUrl;
+            window.open(twShareUrl, '_blank');
+        }
+
+    </script>
+</body>
+
+</html>

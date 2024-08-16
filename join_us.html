@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Royal's House - About Us</title>
+    <link rel="shortcut icon" href="logoicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom right, rgba(160, 234, 207, 1), rgba(1, 72, 114, 1));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        image {
+            position: relative;
+        }
+
+        .navigation_home {
+            padding-left: 30px;
+            font-size: 30px;
+
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: black;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            top: 13px;
+            left: 506px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: 470px;
+            padding-left: 4px;
+            padding-right: 10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding-left: 25px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: transparent
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: transparent;
+        }
+
+        #dropbtn {
+            background-color: transparent;
+            color: black;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            top: 13px;
+            left: 350px;
+        }
+
+        #dropdown {
+            position: relative;
+        }
+
+        #dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: 316px;
+            padding-left: 4px;
+            width: 120px;
+            padding-right: 30px;
+
+
+        }
+
+        #dropdown-content a {
+            color: black;
+            padding-left: 25px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #dropdown-content a:hover {
+            background-color: transparent
+        }
+
+        #dropdown:hover #dropdown-content {
+            display: block;
+        }
+
+        #dropdown:hover #dropbtn {
+            background-color: transparent;
+        }
+
+        #home {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            padding: 15px 20px;
+            position: relative;
+            top: 35px;
+        }
+
+        #home:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        #home:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        #about_us {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            padding: 15px 20px;
+            position: relative;
+            top: 35px;
+        }
+
+        #about_us:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        #about_us:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        #find_hostel {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            padding: 15px 20px;
+            position: relative;
+            top: 35px;
+        }
+
+        #find_hostel:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        #find_hostel:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        #contact_us {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            padding: 15px 20px;
+            position: relative;
+            top: 35px;
+        }
+
+        #contact_us:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        #contact_us:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        #join_us {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            padding: 15px 20px;
+            position: relative;
+            top: 35px;
+        }
+
+        #join_us:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: #fff;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        #join_us:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        a:hover {
+            color: #c60eb5;
+        }
+
+        a:visited {
+            text-decoration: none !important;
+        }
+
+        a:checked {
+            text-decoration: none;
+        }
+
+        /*Id of Home*/
+
+        #login_logo {
+            position: relative;
+
+        }
+
+        #logo {
+            position: relative;
+            width: 200px;
+            height: 100px;
+        }
+
+        .label {
+            display: inline;
+            cursor: pointer;
+            background-color: grey;
+            padding: 3px, 13px;
+            border-radius: 3px;
+            margin-top: 12px;
+            padding: 3px;
+            top: 10px;
+            position: relative;
+        }
+
+        #container {
+            margin: 0;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            top: 80px;
+            height: 700px;
+            width: 1850px;
+            border-radius: 0px 30px 30px 0px;
+        }
+
+        #image {
+            position: relative;
+            height: 700px;
+            margin: 0;
+            width: 925px;
+            top: -2px;
+        }
+
+        #text {
+            position: relative;
+            height: 500px;
+            margin: 0;
+            height: 700px;
+            width: 925px;
+            left: 925px;
+            top: -702px;
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 0px 30px 30px 0px;
+        }
+
+        #text_content {
+            position: relative;
+            width: 900px;
+            height: 180px;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #form {
+            position: relative;
+            width: 900px;
+            height: 320px;
+            left: 10px;
+        }
+
+        input {
+            position: relative;
+        }
+
+        #name {
+            position: relative;
+            top: 50px;
+            height: 30px;
+            width: 300px;
+            border-radius: 30px;
+            padding: 5px;
+            left: 275px;
+        }
+
+        #email {
+            position: relative;
+            top: 110px;
+            height: 30px;
+            width: 300px;
+            border-radius: 30px;
+            padding: 5px;
+            left: 275px;
+        }
+
+        #tel {
+            position: relative;
+            top: 80px;
+            height: 30px;
+            width: 300px;
+            border-radius: 30px;
+            padding: 5px;
+            left: 275px;
+        }
+
+        #submit {
+            position: relative;
+            top: 140px;
+            height: 30px;
+            width: 100px;
+            border-radius: 30px;
+            left: 385px;
+        }
+
+        #join_us_form {
+            position: relative;
+            display: block;
+            width: 350px;
+            top: 50px;
+        }
+
+        #text2 {
+            position: relative;
+            left: 40px;
+        }
+
+        #fbpage{
+            position: relative;
+            width: 350px;
+            top: 50px;
+            left: -900px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="navigation">
+        <table>
+            <tr>
+                <td><img id="logo" src="logo.png" alt="logo"></td>
+                <td class="navigation_home" id="home"><a href="index.html">Home</a></td>
+                <td class="navigation_home" id="find_hostel"><a href="find_hostel.html">Find Hostel</a></td>
+                <td class="navigation_home" id="about_us"><a href="about_us.html">About Us</a></td>
+                <td class="navigation_home" id="contact_us"><a href="contact_us.html"> Contact Us</a></td>
+                <td class="navigation_home" id="join_us"><a href="join_us.html"> Join Us</a></td>
+                <td class="navigation_home" id="drop_down">
+                    <div id="dropdown">
+                        <button id="dropbtn"><img src="profile.png" width="50px" height="50px">
+                            <p id="login_logo"></p>
+                        </button>
+                        <div id="dropdown-content">
+                            <a href="welcome.html" style="font-size: 24px;">Sign Out</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="container">
+        <div id="image">
+            <img src="handshake-square.jpg" width="925px" height="700px">
+        </div>
+        <div id="text">
+            <div id="text_content">
+                <b>Why Join Us</b>
+                <p>Royal's House is a student accommodation provider that offers property owners the opportunity to earn
+                    passive income by entrusting the management of their rental property to a reputable and experienced
+                    team. By partnering with Royal's House, investors can benefit from a proven track record of success,
+                    access to a large network of student tenants, and the convenience of having the rental process
+                    handled by a trusted third-party.</p>
+            </div>
+            <div id="form">
+                <div id="button">
+                    <form onsubmit="submitForm()">
+                        <input id="name" type="text" required placeholder="Fullname" autocomplete="off"
+                            pattern="[a-zA-Z]+(\s+[a-zA-Z]+)*"
+                            oninvalid="this.setCustomValidity('Please enter at least one alphabet and do not start with space')"
+                            oninput="this.setCustomValidity('')"><br>
+                        <input id="tel" type="text" required placeholder="Telephone Number" autocomplete="off"
+                            pattern="[0][1][0-9]{8,}" oninvalid="this.setCustomValidity('Please match 01XXXXXXXX')"
+                            oninput="this.setCustomValidity('')"><br>
+                        <input id="email" type="email" placeholder="E-mail" required autocomplete="off"><br>
+                        <input id="submit" type="submit" value="Join Us">
+                    </form>
+                </div>
+                <div id="join_us_form">
+                    </div>
+                </div>
+                <div id = "fbpage">
+                    <b id="text2" style="color: #fff;">Follow us to get more information.</b>
+                <div id="fb-root"></div>
+                <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100091802829929" data-tabs=""
+                    data-width="" data-height="" data-small-header="true" data-adapt-container-width="false"
+                    data-hide-cover="false" data-show-facepile="false">
+                    <blockquote cite="https://www.facebook.com/profile.php?id=100091802829929"
+                        class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/profile.php?id=100091802829929">Royal&#039;s House</a>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $.getScript("https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0", function () {
+                FB.init({
+                    xfbml: 1,
+                    version: 'v16.0'
+                });
+            }).attr('nonce', 'c8r3rNcC');
+        });
+
+        function submitForm() {
+
+                var fNameJoinUs = document.getElementById("name").value;
+                var emailJoinUs = document.getElementById("email").value;
+                var telJoinUs = document.getElementById("tel").value;
+
+                sessionStorage.setItem("fullNameJoinUs", fNameJoinUs);
+                sessionStorage.setItem("emailJoinUs", emailJoinUs);
+                sessionStorage.setItem("telephoneJoinUs", telJoinUs);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Royal's House - Home</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logoicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="navigation">
+        <table>
+            <tr>
+                <td><img id="logo" src="logo.png" alt="logo"></td>
+                <td class="navigation_home" id="home"><a href="index.html">Home</a></td>
+                <td class="navigation_home" id="find_hostel"><a href="find_hostel.html">Find Hostel</a></td>
+                <td class="navigation_home" id="about_us"><a href="about_us.html">About Us</a></td>
+                <td class="navigation_home" id="contact_us"><a href="contact_us.html"> Contact Us</a></td>
+                <td class="navigation_home" id="join_us"><a href="join_us.html"> Join Us</a></td>
+                <td class="navigation_home" id="drop_down">
+                    <div id="dropdown">
+                        <button id="dropbtn"><img src="profile.png" width="50px" height="50px">
+                            <p id="login_logo"></p>
+                        </button>
+                        <div id="dropdown-content">
+                            <a href="welcome.html" style="font-size: 24px;">Sign Out</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="center_container">
+        <div id="content">
+            <div id="image_container">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 5</div>
+                        <img src="hostel1.jpg" style="width:100%">
+                        <div class="text">Discover your home away from home at Royal's House.</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 5</div>
+                        <img src="hostel2.jpg" style="width:100%">
+                        <div class="text">Discover your home away from home at Royal's House.</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 5</div>
+                        <img src="hostel3.jpg" style="width:100%">
+                        <div class="text">Discover your home away from home at Royal's House.</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 5</div>
+                        <img src="hostel4.jpg" style="width:100%">
+                        <div class="text">Discover your home away from home at Royal's House.</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 5</div>
+                        <img src="hostel5.jpg" style="width:100%">
+                        <div class="text">Discover your home away from home at Royal's House.</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+            <div id="announment_container">
+                <div id="announment_content">
+                    <div id="fb-post" style="background-color: white; position: relative;"></div>
+                    <div id="fb-post-container" style="background-color: white; width: 633px; position: relative;"></div>
+                    <script>
+                        $(document).ready(function () {
+                            var postUrl = "https://www.facebook.com/permalink.php?story_fbid=pfbid02c2spfdMiRzqBZ96tVBFnLJJLcYgKeqs69nTtkcWP1L212vD2vQcvGq7YNHFPdgy9l&id=100091802829929";
+                            var iframe = $('<iframe>', {
+                                src: 'https://www.facebook.com/plugins/post.php?href=' + encodeURIComponent(postUrl) + '&show_text=true&width=500',
+                                width: '633',
+                                height: '500',
+                                scrolling: 'yes',
+                                frameborder: '0',
+                                allowTransparency: 'false'
+                            });
+                            $('#fb-post-container').append(iframe);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

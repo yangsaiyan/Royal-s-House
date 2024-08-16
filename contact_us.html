@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script type="text/javascript">
+    var now = new Date();
+    var minutes = 1;
+    now.setTime(now.getTime() + (minutes * 60 * 1000));
+
+    window.addEventListener('beforeunload', leaving);
+    function leaving(f) {
+      window.addEventListener('unload', left);
+      f.preventDefault();
+      f.returnValue = ``;
+      function left() {
+        localStorage.clear();
+      }
+
+    }
+
+
+  </script>
+
+  <meta charset="UTF-8">
+
+  <title>Royal's House - Contact Us</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+
+  <style>
+    /* Facebook */
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    /* Twitter */
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    * {
+      font-family: sans-serif;
+    }
+
+    body {
+      background-image: linear-gradient(to bottom right, rgba(160, 234, 207, 1), rgba(1, 72, 114, 1));
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    image {
+      position: relative;
+    }
+
+    .navigation_home {
+      padding-left: 30px;
+      font-size: 30px;
+
+    }
+
+    .dropbtn {
+      background-color: transparent;
+      color: black;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      top: 13px;
+      left: 350px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: transparent;
+      width: 150px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      left: 316px;
+      padding-left: 4px;
+      padding-right: 10px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding-left: 25px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: transparent
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: transparent;
+    }
+
+    #dropbtn {
+      background-color: transparent;
+      color: black;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      top: 13px;
+      left: 350px;
+    }
+
+    #dropdown {
+      position: relative;
+    }
+
+    #dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: transparent;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      left: 472px;
+      padding-left: 4px;
+      width: 120px;
+      padding-right: 30px;
+
+
+    }
+
+    #dropdown-content a {
+      color: black;
+      padding-left: 25px;
+      text-decoration: none;
+      display: block;
+    }
+
+    #dropdown-content a:hover {
+      background-color: transparent
+    }
+
+    #dropdown:hover #dropdown-content {
+      display: block;
+    }
+
+    #dropdown:hover #dropbtn {
+      background-color: transparent;
+    }
+
+    #home {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+      top: 35px;
+    }
+
+    #home:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #fff;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    #home:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    #about_us {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+      top: 35px;
+    }
+
+    #about_us:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #fff;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    #about_us:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    #find_hostel {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+      top: 35px;
+    }
+
+    #find_hostel:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #fff;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    #find_hostel:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    #contact_us {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+      top: 35px;
+    }
+
+    #contact_us:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #fff;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    #contact_us:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    #join_us {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
+      top: 35px;
+    }
+
+    #join_us:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #fff;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    #join_us:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    a:hover {
+      color: #c60eb5;
+    }
+
+    a:visited {
+      text-decoration: none !important;
+    }
+
+    a:checked {
+      text-decoration: none;
+    }
+
+    /*Id of Home*/
+
+    #login_logo {
+      position: relative;
+
+    }
+
+    #logo {
+      position: relative;
+      width: 200px;
+      height: 100px;
+    }
+
+    .label {
+      display: inline;
+      cursor: pointer;
+      background-color: grey;
+      padding: 3px, 13px;
+      border-radius: 3px;
+      margin-top: 12px;
+      padding: 3px;
+      top: 10px;
+      position: relative;
+    }
+
+    .container {
+      position: relative;
+      margin: auto;
+      padding: 3px;
+      width: 1300px;
+      height: 750px;
+      top: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    #cForm {
+      color: rgba(1, 72, 114, 1);
+      font-style: bold;
+      font-size: 30px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      border: 2px solid dodgerblue;
+      width: 10%;
+      height: 22px;
+    }
+
+    .subject {
+      top: 50px;
+      border: 3px solid dodgerblue;
+      padding: 12px 20px;
+      resize: vertical;
+      width: 50%;
+      box-sizing: border-box;
+      height: 200px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    input[type=submit] {
+      background-color: rgba(1, 72, 114, 1);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script>$('<script/>', {
+      async: true,
+      defer: true,
+      crossorigin: 'anonymous',
+      src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0',
+      nonce: '0Q4BkPb8'
+    }).appendTo('body');
+  </script>
+  <div id="navigation">
+    <table>
+      <tr>
+        <td><img id="logo" src="logo.png" alt="logo"></td>
+        <td class="navigation_home" id="home"><a href="index.html">Home</a></td>
+        <td class="navigation_home" id="find_hostel"><a href="find_hostel.html">Find Hostel</a></td>
+        <td class="navigation_home" id="about_us"><a href="about_us.html">About Us</a></td>
+        <td class="navigation_home" id="contact_us"><a href="contact_us.html"> Contact Us</a></td>
+        <td class="navigation_home" id="join_us"><a href="join_us.html"> Join Us</a></td>
+        <td class="navigation_home" id="drop_down">
+          <div class="dropdown">
+            <button class="dropbtn"><img src="profile.png" width="50px" height="50px">
+              <p id="login_logo"></p>
+            </button>
+            <div class="dropdown-content">
+              <a href="welcome.html" style="font-size: 24px;">Sign Out</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="socialmedia">
+    <button id="fbbtn" onclick="fbShare()">
+      <div class="smbtn">
+        <div class="icon">
+          <div style style="display: none;" class="fb-share-button"
+            data-href="https://www.facebook.com/permalink.php?story_fbid=106348172435277&amp;id=100091802829929"
+            data-layout="" data-size=""><a target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D106348172435277%26id%3D100091802829929&amp;src=sdkpreparse"
+              class="fb-xfbml-parse-ignore">Share</a></div>
+        </div>
+      </div>
+    </button>
+    <button id="tweet-btn" onclick="twShare()">
+      <div class="smbtn">
+        <div class="icon">
+          <a href="#" class="fa fa-twitter"></a>
+          <span>Share</span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div class="container">
+    <form id="cForm"> <br>
+      Name : <input type="text" id="1" placeholder=" Username"><br><br>
+      Phone Number : <input type="text" id="2" placeholder="011-12345678"><br><br>
+      Email : <input type="text" id="3" placeholder="example@gmail.com"><br><br>
+      Date : <input type="text" id="4" placeholder="DD/MM/YYYY"><br><br>
+      House: <input type="text" id="5" placeholder="Standford/Manchester/Oxford">
+      <input type="text" id="6" placeholder="House Number">
+      <input type="text" id="7" placeholder="Room Number"><br><br>
+      Subject : <input class="subject" id="8" placeholder="Anything you request..."><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+<script>
+
+$('#tweet-btn').click(function() {
+  var tweetUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href);
+  window.open(tweetUrl);
+});
+
+  $("#cForm").submit(function (e) {
+    window.removeEventListener('beforeunload', leaving);
+    var cookievalue1;
+
+    if (($("#1").val() == localStorage.getItem("a") && $("#2").val() == localStorage.getItem("b") && $("#3").val() == localStorage.getItem("c") && $("#4").val() == localStorage.getItem("d") && $("#5").val() == localStorage.getItem("e") && $("#6").val() == localStorage.getItem("f") && $("#7").val() == localStorage.getItem("g") && $("#8").val() == localStorage.getItem("h"))) {
+      e.preventDefault();
+      alert("You can't submit the same information twice");
+    }
+    else if (($("#1").val() != '' && $("#2").val() != '' && $("#3").val() != '' && $("#4").val() != '' && $("#5").val() != '' && $("#6").val() != '' && $("#7").val() != '' && $("#8").val() != '')) {
+
+      if (cookievalue1 == undefined) {
+
+        alert("Thank you for taking interest. We'll contact you as soon as the accomodation is available");
+        const a = localStorage.setItem("a", $("#1").val());
+        const b = localStorage.setItem("b", $("#2").val());
+        const c = localStorage.setItem("c", $("#3").val());
+        const d = localStorage.setItem("d", $("#4").val());
+        const e = localStorage.setItem("e", $("#5").val());
+        const f = localStorage.setItem("f", $("#6").val());
+        const g = localStorage.setItem("g", $("#7").val());
+        const h = localStorage.setItem("h", $("#8").val());
+        cookievalue1 = $("#1").val();
+        document.cookie = "identifier" + cookievalue1 + "expires = " + now.toUTCString();
+      }
+      else if (cookievalue1 != "undefined") {
+        e.preventDefault();
+        alert("You can't send more than one submission per minute");
+      }
+    }
+    else if ($("#1").val() == '' || $("#2").val() == '' || $("#3").val() == '' || $("#4").val() == '' || $("#5").val() == '' || $("#6").val() == '' || $("#7").val() == '' || $("#8").val() == '') {
+      e.preventDefault();
+      alert("Fill in the required fields.")
+    }
+  })
+
+</script>
+
+</html>
